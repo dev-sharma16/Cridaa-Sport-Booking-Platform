@@ -85,7 +85,6 @@ async function fetchAllVenue(req,res){
     })
 }
 
-//todo: on detail venue page only detail and slots details will be displayed and when user select a slot an click on book button it will redirect to new page '/:id/book/:slotId' and then user click on book then the booking is done 
 async function fetchVenueById(req,res){
     const venueId = req.params.id;
 
@@ -126,7 +125,6 @@ async function fetchVenueById(req,res){
     })
 }
 
-//todo: and a seperate page for booking and pass 'slotId' in url
 async function bookSlot(req, res){
     const slotId = req.params.slotId;
 

@@ -8,7 +8,7 @@ router.post("/addVenue", authMiddleware, addVenue);
 
 router.get("/", fetchAllVenue);
 
-router.get("/:id", authMiddleware, fetchVenueById);
+router.get("/:id", fetchVenueById);
 
 router.post("/book/:slotId", authMiddleware, bookSlot)
 
