@@ -12,6 +12,7 @@ app.use(cookieParser());
 const allowedOrigins = [
     process.env.FrontEnd_Url,
     "http://localhost:5173",
+    "https://cridaa-sport-booking-platform.vercel.app",
 ];
 
 app.use(
@@ -23,6 +24,7 @@ app.use(
                 callback(new Error("Not allowed by CORS"));
             }
         },
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
         credentials: true,
     })
 );
