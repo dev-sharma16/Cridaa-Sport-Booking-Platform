@@ -18,7 +18,7 @@ function Home() {
         setLoading(true);
         const response = await axios.get('/venue/');
         const turfData = response.data;
-        console.log(turfData);
+        // console.log(turfData);
         const turfs = turfData?.venues
         setTurfs(turfs);
       } catch (error) {
