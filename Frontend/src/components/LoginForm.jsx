@@ -37,10 +37,20 @@ function LoginForm() {
                     <label className="block font-semibold mb-1">Username or Email</label>
                     <input
                         type="text"
-                        {...register("usernameOrEmail", { required: "Username or Email is required" })}
+                        {...register("usernameOrEmail", { 
+                            required: "Username or Email is required",
+                            validate: (value) => {
+                                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                                const usernameRegex = /^[a-zA-Z0-9_]{3,20}$/; // 3–20 chars, safe username
+                                if (emailRegex.test(value) || usernameRegex.test(value)) {
+                                    return true;
+                                }
+                                return "Enter a valid email or username (3–20 letters/numbers/underscores)";
+                            },
+                        })}
                         className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
-                    {errors.username && <p className="text-red-500 text-sm">{errors.username.message}</p>}
+                    {errors.usernameOrEmail && <p className="text-red-500 text-sm">{errors.usernameOrEmail.message}</p>}
                 </div>
                 <div>
                     <label className="block font-semibold mb-1">Password</label>

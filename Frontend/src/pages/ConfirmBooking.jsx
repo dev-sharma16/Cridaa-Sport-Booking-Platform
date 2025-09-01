@@ -40,7 +40,7 @@ function ConfirmBooking() {
 
   if (isConfirmed) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen text-center p-6">
+      <div className="flex flex-col items-center justify-center min-h-screen text-center p-6 py-22">
         <h1 className="text-2xl font-bold text-green-600 mb-4">
           🎉 Your booking is confirmed!
         </h1>
@@ -55,7 +55,7 @@ function ConfirmBooking() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto p-6">
+    <div className="max-w-3xl mx-auto p-6 py-22">
       {/* Venue Details */}
       <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden">
         <div className="md:w-1/2">

@@ -49,7 +49,7 @@ function VenueDetail() {
   if (loading) return <p className="text-center py-10">Loading...</p>;
 
   return (
-    <div className="max-w-5xl mx-auto p-6">
+    <div className="max-w-5xl mx-auto p-6 py-22">
       {/* Venue Detail */}
       <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden">
         {/* Image */}

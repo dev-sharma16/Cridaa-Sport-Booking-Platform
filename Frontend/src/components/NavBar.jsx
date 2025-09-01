@@ -20,8 +20,8 @@ function NavBar() {
         navigate('/');     
     };
     return (
-        <nav className="flex justify-between items-center px-6 py-3 bg-gray-900 text-white">
-            <h1 className="text-xl font-bold cursor-pointer" onClick={() => navigate('/')}>
+        <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/70 shadow-md flex justify-between items-center px-5 py-3 md:px-10">
+            <h1 className="text-2xl font-bold text-gray-800 cursor-pointer tracking-wide" onClick={() => navigate('/')}>
                 TurfBook
             </h1>
 
@@ -29,14 +29,14 @@ function NavBar() {
                 {user ? (
                     <button
                         onClick={handleLogout}
-                        className="bg-red-500 hover:bg-red-600 px-4 py-2 rounded"
+                        className="px-5 py-2 rounded-lg bg-gray-800 text-white hover:bg-gray-700 transition"
                     >
                         Logout
                     </button>
                 ) : (
                     <button
                         onClick={handleLogin}
-                        className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded"
+                        className="px-5 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition"
                     >
                         Login / SignUp
                     </button>

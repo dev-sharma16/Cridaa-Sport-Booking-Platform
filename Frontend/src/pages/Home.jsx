@@ -31,7 +31,7 @@ function Home() {
   },[])
 
   return (
-    <div>
+    <div className='px-5 md:px-10 py-20 '>
       <h1 className="text-2xl font-bold mb-6">Book your favourite Venue or Turf</h1>
       {loading ? (
         <p>Loading turfs...</p>

@@ -37,7 +37,21 @@ function RegisterForm() {
                     <label className="block font-semibold mb-1">Username</label>
                     <input
                         type="text"
-                        {...register("username", { required: "Username is required" })}
+                        {...register("username", {
+                            required: "Username is required",
+                            minLength: {
+                                value: 3,
+                                message: "Username must be at least 3 characters"
+                            },
+                            maxLength: {
+                                value: 20,
+                                message: "Username cannot exceed 20 characters"
+                            },
+                            pattern: {
+                              value: /^[a-zA-Z0-9_]+$/, // only letters, numbers, underscore
+                                message: "Username can only contain letters, numbers, and underscores"
+                            }
+                        })}
                         className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                     {errors.username && <p className="text-red-500 text-sm">{errors.username.message}</p>}
@@ -46,10 +60,16 @@ function RegisterForm() {
                     <label className="block font-semibold mb-1">Email</label>
                     <input
                         type="text"
-                        {...register("email", { required: "Username is required" })}
+                        {...register("email", { 
+                            required: "Username is required" ,
+                            pattern: {
+                                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, // RFC 5322 compliant regex
+                                message: "Enter a valid email address"
+                            }
+                        })}
                         className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
-                    {errors.username && <p className="text-red-500 text-sm">{errors.username.message}</p>}
+                    {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
                 </div>
                 <div>
                     <label className="block font-semibold mb-1">Password</label>

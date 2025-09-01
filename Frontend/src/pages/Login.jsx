@@ -3,7 +3,7 @@ import LoginForm from '../components/LoginForm'
 
 function Login() {
   return (
-    <div>
+    <div className='py-22 px-5'>
       <LoginForm/>
     </div>
   )
